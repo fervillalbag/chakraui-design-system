@@ -1,18 +1,21 @@
-import { Box } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import type { NextPage } from "next";
+
+import Cart from "../components/Cart";
+import Detail from "../components/Detail";
 
 const Home: NextPage = () => {
   return (
-    <Box
-      width={`xl`}
-      height={`xl`}
-      borderRadius={`lg`}
-      backgroundColor="primary.900"
-      sx={{ borderTop: "10px solid", borderColor: "primary.50" }}
-      fontSize={`md`}
-    >
-      Hello
-    </Box>
+    <Container maxW={`container.xl`} p={`0`}>
+      <Flex
+        h={{ base: `auto`, md: `100vh` }}
+        py={[0, 10, 20]}
+        direction={{ base: `column-reverse`, md: `row` }}
+      >
+        <Detail />
+        <Cart />
+      </Flex>
+    </Container>
   );
 };
 
